@@ -5,6 +5,7 @@ import Link from "next/link"
 
 const topPicks = [
   {
+    slug: "chefs-choice-15-trizor-xv",
     name: "Chef'sChoice 15 Trizor XV",
     rating: 4.8,
     reviews: 2847,
@@ -13,6 +14,7 @@ const topPicks = [
     features: ["3-Stage Sharpening", "Diamond Abrasives", "Professional Results"],
   },
   {
+    slug: "work-sharp-culinary-e5",
     name: "Work Sharp Culinary E5",
     rating: 4.7,
     reviews: 1923,
@@ -21,6 +23,7 @@ const topPicks = [
     features: ["Flexible Guides", "Precision Angles", "Compact Design"],
   },
   {
+    slug: "presto-eversharp",
     name: "Presto EverSharp",
     rating: 4.6,
     reviews: 3421,
@@ -44,7 +47,7 @@ export function TopPicks() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {topPicks.map((product, index) => (
-            <Link key={index} href="/reviews" className="block">
+            <Link key={index} href={`/reviews/${product.slug}`} className="block">
               <Card className="overflow-hidden blade-shine hover:scale-105 transition-all duration-300 bg-card border-border cursor-pointer">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img

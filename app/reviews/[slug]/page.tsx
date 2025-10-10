@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Star, Check, X, ArrowLeft } from "lucide-react"
-import { Card } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { ArrowLeft, Star, Check, X, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const reviews = [
   {
@@ -15,6 +15,7 @@ const reviews = [
     rating: 4.8,
     price: "$189.99",
     image: "https://m.media-amazon.com/images/I/615RT4PtR8L._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/ChefsChoice-EdgeSelect-Professional-Sharpener-Sharpening/dp/B004UGUNFM",
     pros: ["3-stage sharpening system", "Diamond abrasives for durability", "Precision angle guides"],
     cons: ["Higher price point", "Takes counter space"],
     verdict: "Best overall electric knife sharpener for professional results at home.",
@@ -27,7 +28,6 @@ const reviews = [
       power: "125 watts",
       warranty: "3 years",
     },
-    amazonLink: "https://www.amazon.com/ChefsChoice-EdgeSelect-Professional-Sharpener-Sharpening/dp/B004UGUNFM",
   },
   {
     slug: "work-sharp-culinary-e5",
@@ -36,6 +36,7 @@ const reviews = [
     rating: 4.6,
     price: "$149.95",
     image: "https://m.media-amazon.com/images/I/71e-TNCTqhL._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/Work-Sharp-Culinary-Kitchen-Sharpener/dp/B07S6XQ5K2",
     pros: ["Compact and portable design", "Easy one-button operation", "Built-in vacuum for clean sharpening"],
     cons: ["Limited to kitchen knives", "Plastic housing feels less premium"],
     verdict: "Excellent for home cooks seeking convenience and quick sharpening.",
@@ -48,15 +49,15 @@ const reviews = [
       power: "65 watts",
       warranty: "2 years",
     },
-    amazonLink: "https://www.amazon.com/Work-Sharp-Culinary-Kitchen-Sharpener/dp/B07S6XQ5K2",
   },
   {
     slug: "presto-eversharp",
     id: 3,
     title: "Presto EverSharp Electric Knife Sharpener",
     rating: 4.4,
-    price: "$39.99",
+    price: "$76.99",
     image: "https://m.media-amazon.com/images/I/61MlhKau8zL._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/Presto-08810-Professional-Electric-Sharpener/dp/B000TYBWJ0",
     pros: ["Affordable and simple to use", "Compact for easy storage", "Sharpens both straight and serrated blades"],
     cons: ["Basic functionality", "Less precise for professional use"],
     verdict: "Best budget option for occasional knife maintenance.",
@@ -69,20 +70,20 @@ const reviews = [
       power: "60 watts",
       warranty: "1 year",
     },
-    amazonLink: "https://www.amazon.com/Presto-08810-Professional-Electric-Sharpener/dp/B000TYBWJ0",
   },
   {
     slug: "sharp-professional-precision-adjust",
     id: 4,
-    title: "Sharp Professional Precision Adjust Electric Sharpener",
+    title: "Work Sharp Professional Precision Adjust Knife Sharpener",
     rating: 4.7,
-    price: "$119.99",
+    price: "$249.95",
     image: "https://m.media-amazon.com/images/I/81FGKdKYlsL._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/Sharp-Professional-Precision-Adjust-Sharpener/dp/B0BTTXVQRQ",
     pros: ["Adjustable angle guides", "Versatile for all blade types", "Professional precision"],
     cons: ["Learning curve for adjustments", "Manual angle setting"],
     verdict: "Ideal for knife enthusiasts wanting customizable sharpening angles.",
     fullReview:
-      "The Sharp Professional Precision Adjust sharpener offers unparalleled versatility with its adjustable angle guides, ranging from 15 to 30 degrees. This makes it suitable for a wide range of blades, from Japanese chef’s knives to outdoor knives. While it requires some practice to master, the precision and control are unmatched.",
+      "The Work Sharp Professional Precision Adjust sharpener offers unparalleled versatility with its adjustable angle guides, ranging from 15 to 30 degrees. This makes it suitable for a wide range of blades, from Japanese chef's knives to outdoor knives. While it requires some practice to master, the precision and control are unmatched.",
     specs: {
       stages: "3-Stage Sharpening",
       abrasive: "Diamond & Ceramic",
@@ -90,7 +91,6 @@ const reviews = [
       power: "100 watts",
       warranty: "2 years",
     },
-    amazonLink: "https://www.amazon.com/Sharp-Professional-Precision-Adjust-Sharpener/dp/B0BTTXVQRQ",
   },
   {
     slug: "chefs-choice-diamond-hone",
@@ -99,11 +99,12 @@ const reviews = [
     rating: 4.5,
     price: "$89.99",
     image: "https://m.media-amazon.com/images/I/51ApXLfEiqS._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/ChefsChoice-Sharpener-Sharpening-20-degree-Abrasives/dp/B007MHEYW4",
     pros: ["Diamond abrasives for fast sharpening", "Long-lasting edge", "Compact design"],
     cons: ["Noisy during operation", "Bulky for small kitchens"],
     verdict: "Great for heavy-duty sharpening with superior diamond technology.",
     fullReview:
-      "The Chef’s Choice Diamond Hone is a reliable choice for those needing fast and durable sharpening. Its diamond abrasives create long-lasting edges quickly, and the compact design fits most kitchens. While it’s noisier than some competitors, its performance makes it ideal for frequent use.",
+      "The Chef's Choice Diamond Hone is a reliable choice for those needing fast and durable sharpening. Its diamond abrasives create long-lasting edges quickly, and the compact design fits most kitchens. While it's noisier than some competitors, its performance makes it ideal for frequent use.",
     specs: {
       stages: "2-Stage Sharpening",
       abrasive: "100% Diamond",
@@ -111,7 +112,6 @@ const reviews = [
       power: "120 watts",
       warranty: "3 years",
     },
-    amazonLink: "https://www.amazon.com/ChefsChoice-Sharpener-Sharpening-20-degree-Abrasives/dp/B007MHEYW4",
   },
   {
     slug: "dalstrong-chef-cleaver",
@@ -120,11 +120,12 @@ const reviews = [
     rating: 4.3,
     price: "$54.99",
     image: "https://m.media-amazon.com/images/I/615CTKMJjvL._AC_SY879_.jpg",
+    amazonUrl: "https://www.amazon.com/DALSTRONG-Chef-Cleaver-Hybrid-Knife/dp/B08F2XWHNK",
     pros: ["Integrated sharpener", "Ergonomic handle", "High-carbon steel blade"],
     cons: ["Limited to cleaver style", "Requires manual sharpening"],
     verdict: "Convenient all-in-one cleaver with built-in maintenance tool.",
     fullReview:
-      "The DALSTRONG Chef Cleaver combines a high-carbon steel blade with an integrated sharpener for convenience. Its ergonomic handle ensures a comfortable grip, making it ideal for heavy-duty chopping tasks. While limited to cleaver-style blades, it’s a great choice for home cooks who value an all-in-one solution.",
+      "The DALSTRONG Chef Cleaver combines a high-carbon steel blade with an integrated sharpener for convenience. Its ergonomic handle ensures a comfortable grip, making it ideal for heavy-duty chopping tasks. While limited to cleaver-style blades, it's a great choice for home cooks who value an all-in-one solution.",
     specs: {
       stages: "Manual Sharpening",
       abrasive: "Ceramic",
@@ -132,7 +133,6 @@ const reviews = [
       power: "None (Manual)",
       warranty: "1 year",
     },
-    amazonLink: "https://www.amazon.com/DALSTRONG-Chef-Cleaver-Hybrid-Knife/dp/B08F2XWHNK",
   },
   {
     slug: "wusthof-petec",
@@ -141,9 +141,10 @@ const reviews = [
     rating: 4.9,
     price: "$199.99",
     image: "https://m.media-amazon.com/images/I/61b0ng0Gg5L._AC_SX679_.jpg",
-    pros: ["Premium German engineering", "4-stage sharpening system", "Exceptional precision"],
-    cons: ["High cost", "Large footprint"],
-    verdict: "Ultimate choice for professional chefs demanding top precision.",
+    amazonUrl: "https://www.amazon.com/W%C3%BCsthof-Classic-Hollow-2-Piece-3-5-inch/dp/B0B6QBT4FH",
+    pros: ["Premium German engineering", "4-stage system", "Exceptional precision"],
+    cons: ["Premium price", "Large footprint"],
+    verdict: "The ultimate choice for professional chefs and serious culinary enthusiasts.",
     fullReview:
       "The Wusthof PEtec is a top-tier sharpener designed for professional kitchens. Its 4-stage system, combined with premium diamond abrasives, delivers razor-sharp edges with exceptional precision. The computer-controlled process ensures consistent results, making it a favorite among chefs who demand the best.",
     specs: {
@@ -153,28 +154,27 @@ const reviews = [
       power: "150 watts",
       warranty: "5 years",
     },
-    amazonLink: "https://www.amazon.com/W%C3%BCsthof-Classic-Hollow-2-Piece-3-5-inch/dp/B0B6QBT4FH",
   },
   {
-    slug: "brod-taylor-professional",
+    slug: "brod-taylor-sourdough-home",
     id: 8,
-    title: "Brod & Taylor Professional Knife Sharpener",
+    title: "Brod & Taylor Sourdough Home",
     rating: 4.6,
-    price: "$134.99",
+    price: "$128.00",
     image: "https://m.media-amazon.com/images/I/51OZMYpKnkL._AC_SX679_.jpg",
-    pros: ["Quiet operation", "Sleek stainless design", "Consistent professional results"],
-    cons: ["Expensive replacement belts", "Requires regular maintenance"],
-    verdict: "Premium sharpener with whisper-quiet performance for daily use.",
+    amazonUrl: "https://www.amazon.com/Brod-Taylor-SH-100-Sourdough-Home/dp/B0C9SJ9FRW",
+    pros: ["Precise temperature control", "Compact design", "Consistent starter performance"],
+    cons: ["Expensive for a niche product", "Limited to sourdough use"],
+    verdict: "Perfect for sourdough enthusiasts seeking consistent starter maintenance.",
     fullReview:
-      "The Brod & Taylor Professional stands out with its whisper-quiet operation and sleek stainless steel design. Its 3-stage sharpening system delivers consistent, professional-grade results, making it ideal for daily use in busy kitchens. Maintenance is straightforward, though replacement belts can be costly.",
+      "The Brod & Taylor Sourdough Home is a specialized tool for sourdough bakers, offering precise temperature control from 41 to 122°F. Its compact design fits easily in any kitchen, ensuring consistent starter performance with minimal effort. While niche, it's a game-changer for maintaining healthy, active sourdough starters.",
     specs: {
-      stages: "3-Stage Sharpening",
-      abrasive: "Diamond & Stropping",
-      angle: "15 degrees",
-      power: "90 watts",
-      warranty: "3 years",
+      stages: "N/A",
+      abrasive: "N/A",
+      angle: "N/A",
+      power: "15 watts",
+      warranty: "1 year",
     },
-    amazonLink: "https://www.amazon.com/Brod-Taylor-SH-100-Sourdough-Home/dp/B0C9SJ9FRW",
   },
   {
     slug: "cold-steel-jimi-slash",
@@ -183,11 +183,12 @@ const reviews = [
     rating: 4.2,
     price: "$399.99",
     image: "https://m.media-amazon.com/images/I/51Fv9n2OkyL._AC_SX679_.jpg",
+    amazonUrl: "https://www.amazon.com/Cold-Steel-Slash-Chopper-Cleaver/dp/B0CBW2DZ5K",
     pros: ["CPM-3V steel blade", "Premium leather sheath", "Ergonomic Kray-Ex handle"],
     cons: ["High price", "Specialized for chopping"],
     verdict: "Specialized high-end chopper for competitive enthusiasts.",
     fullReview:
-      "The Cold Steel Jimi Slash Competition Chopper is a premium tool designed for chopping competitions. Its CPM-3V steel blade offers exceptional durability and sharpness, while the ergonomic Kray-Ex handle ensures a secure grip. Limited to 1000 serialized units, it’s a collector’s item for enthusiasts.",
+      "The Cold Steel Jimi Slash Competition Chopper is a premium tool designed for chopping competitions. Its CPM-3V steel blade offers exceptional durability and sharpness, while the ergonomic Kray-Ex handle ensures a secure grip. Limited to 1000 serialized units, it's a collector's item for enthusiasts.",
     specs: {
       stages: "None (Fixed Blade)",
       abrasive: "N/A",
@@ -195,7 +196,6 @@ const reviews = [
       power: "None (Manual)",
       warranty: "1 year",
     },
-    amazonLink: "https://www.amazon.com/Cold-Steel-Slash-Chopper-Cleaver/dp/B0CBW2DZ5K",
   },
 ]
 
@@ -217,77 +217,90 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
             Back to Reviews
           </Link>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <div>
+          {/* Product Review Section */}
+          <div className="grid md:grid-cols-[400px_1fr] gap-8 mb-12">
+            {/* Product Image */}
+            <div className="relative">
               <img
                 src={review.image || "/placeholder.svg"}
                 alt={review.title}
-                className="w-full rounded-lg shadow-2xl"
+                className="w-full h-auto rounded-lg blade-shine"
               />
             </div>
 
-            <div>
-              <div className="flex items-start justify-between mb-4">
-                <h1 className="font-display text-4xl font-bold">{review.title}</h1>
-                <Badge className="bg-primary/20 text-primary border-primary/30 text-lg px-3 py-1">
-                  <Star className="w-5 h-5 fill-primary mr-1" />
-                  {review.rating}
-                </Badge>
+            {/* Product Info */}
+            <div className="flex flex-col gap-6">
+              <div>
+                <h1 className="text-4xl font-bold mb-4 font-heading">{review.title}</h1>
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-1">
+                    <Star className="w-5 h-5 fill-primary text-primary" />
+                    <span className="text-2xl font-bold">{review.rating}</span>
+                    <span className="text-muted-foreground">/5.0</span>
+                  </div>
+                  <Badge variant="secondary" className="text-lg px-4 py-1">
+                    {review.price}
+                  </Badge>
+                </div>
+                <p className="text-lg text-muted-foreground italic border-l-4 border-primary pl-4">{review.verdict}</p>
               </div>
 
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                    <Check className="w-5 h-5 text-green-400" />
+              <Button size="lg" className="w-full bg-primary hover:bg-primary/90 text-lg" asChild>
+                <a href={review.amazonUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="w-5 h-5 mr-2" />
+                  Buy on Amazon
+                </a>
+              </Button>
+
+              {/* Pros and Cons */}
+              <div className="grid md:grid-cols-2 gap-4">
+                <Card className="p-4 glass-effect border-green-500/20">
+                  <h3 className="font-semibold mb-3 flex items-center gap-2 text-green-400">
+                    <Check className="w-5 h-5" />
                     Pros
                   </h3>
                   <ul className="space-y-2">
-                    {review.pros.map((pro, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-green-400 mt-1">•</span>
-                        {pro}
+                    {review.pros.map((pro, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm">
+                        <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                        <span>{pro}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
+                </Card>
 
-                <div>
-                  <h3 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                    <X className="w-5 h-5 text-red-400" />
+                <Card className="p-4 glass-effect border-red-500/20">
+                  <h3 className="font-semibold mb-3 flex items-center gap-2 text-red-400">
+                    <X className="w-5 h-5" />
                     Cons
                   </h3>
                   <ul className="space-y-2">
-                    {review.cons.map((con, i) => (
-                      <li key={i} className="flex items-start gap-2 text-muted-foreground">
-                        <span className="text-red-400 mt-1">•</span>
-                        {con}
+                    {review.cons.map((con, index) => (
+                      <li key={index} className="flex items-start gap-2 text-sm">
+                        <X className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
+                        <span>{con}</span>
                       </li>
                     ))}
                   </ul>
-                </div>
-
-                <Button className="w-full bg-primary hover:bg-primary/90 text-lg py-6">Buy on Amazon</Button>
+                </Card>
               </div>
             </div>
           </div>
 
+          {/* Full Review */}
           <Card className="p-8 glass-effect mb-8">
-            <h2 className="font-display text-2xl font-bold mb-4">Expert Verdict</h2>
-            <p className="text-lg leading-relaxed">{review.verdict}</p>
+            <h2 className="text-3xl font-bold mb-6 font-heading">Expert Review</h2>
+            <p className="text-lg leading-relaxed text-foreground/90">{review.fullReview}</p>
           </Card>
 
-          <Card className="p-8 glass-effect mb-8">
-            <h2 className="font-display text-2xl font-bold mb-6">Full Review</h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">{review.fullReview}</p>
-          </Card>
-
+          {/* Technical Specifications */}
           <Card className="p-8 glass-effect">
-            <h2 className="font-display text-2xl font-bold mb-6">Technical Specifications</h2>
-            <div className="grid md:grid-cols-2 gap-4">
+            <h2 className="text-3xl font-bold mb-6 font-heading">Technical Specifications</h2>
+            <div className="grid md:grid-cols-2 gap-6">
               {Object.entries(review.specs).map(([key, value]) => (
-                <div key={key} className="flex justify-between items-center p-4 rounded-lg bg-background/50">
-                  <span className="font-medium capitalize">{key.replace(/([A-Z])/g, " $1").trim()}:</span>
-                  <span className="text-muted-foreground">{value}</span>
+                <div key={key} className="flex justify-between items-center border-b border-border/50 pb-3">
+                  <span className="text-muted-foreground capitalize">{key.replace(/([A-Z])/g, " $1").trim()}</span>
+                  <span className="font-semibold">{value}</span>
                 </div>
               ))}
             </div>

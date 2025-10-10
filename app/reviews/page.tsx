@@ -8,97 +8,106 @@ import Link from "next/link"
 
 export default function ReviewsPage() {
   const reviews = [
-  {
-    id: 1,
-    title: "Chef's Choice 15 Trizor XV Electric Knife Sharpener",
-    rating: 4.8,
-    price: "$189.99",
-    image: "https://m.media-amazon.com/images/I/615RT4PtR8L._AC_SX679_.jpg",
-    pros: ["3-stage sharpening system", "Diamond abrasives for durability", "Precision angle guides"],
-    cons: ["Higher price point", "Takes counter space"],
-    verdict: "Best overall electric knife sharpener for professional results at home.",
-  },
-  {
-    id: 2,
-    title: "Work Sharp Professional Electric Culinary E5",
-    rating: 4.6,
-    price: "$149.95",
-    image: "https://m.media-amazon.com/images/I/71e-TNCTqhL._AC_SX679_.jpg",
-    pros: ["Compact and portable design", "Easy one-button operation", "Built-in vacuum for clean sharpening"],
-    cons: ["Limited to kitchen knives", "Plastic housing feels less premium"],
-    verdict: "Excellent for home cooks seeking convenience and quick sharpening.",
-  },
-  {
-    id: 3,
-    title: "Presto EverSharp Electric Knife Sharpener",
-    rating: 4.4,
-    price: "$39.99",
-    image: "https://m.media-amazon.com/images/I/61MlhKau8zL._AC_SX679_.jpg",
-    pros: ["Affordable and simple to use", "Compact for easy storage", "Sharpens both straight and serrated blades"],
-    cons: ["Basic functionality", "Less precise for professional use"],
-    verdict: "Best budget option for occasional knife maintenance.",
-  },
-  {
-    id: 4,
-    title: "Sharp Professional Precision Adjust Electric Sharpener",
-    rating: 4.7,
-    price: "$119.99",
-    image: "https://m.media-amazon.com/images/I/81FGKdKYlsL._AC_SX679_.jpg",
-    pros: ["Adjustable angle guides", "Versatile for all blade types", "Professional precision"],
-    cons: ["Learning curve for adjustments", "Manual angle setting"],
-    verdict: "Ideal for knife enthusiasts wanting customizable sharpening angles.",
-  },
-  {
-    id: 5,
-    title: "Chef's Choice Diamond Hone Electric Sharpener",
-    rating: 4.5,
-    price: "$89.99",
-    image: "https://m.media-amazon.com/images/I/51ApXLfEiqS._AC_SX679_.jpg",
-    pros: ["Diamond abrasives for fast sharpening", "Long-lasting edge", "Compact design"],
-    cons: ["Noisy during operation", "Bulky for small kitchens"],
-    verdict: "Great for heavy-duty sharpening with superior diamond technology.",
-  },
-  {
-    id: 6,
-    title: "DALSTRONG Chef Cleaver with Sharpener",
-    rating: 4.3,
-    price: "$54.99",
-    image: "https://m.media-amazon.com/images/I/615CTKMJjvL._AC_SY879_.jpg",
-    pros: ["Integrated sharpener", "Ergonomic handle", "High-carbon steel blade"],
-    cons: ["Limited to cleaver style", "Requires manual sharpening"],
-    verdict: "Convenient all-in-one cleaver with built-in maintenance tool.",
-  },
-  {
-    id: 7,
-    title: "Wusthof PEtec Electric Knife Sharpener",
-    rating: 4.9,
-    price: "$199.99",
-    image: "https://m.media-amazon.com/images/I/61b0ng0Gg5L._AC_SX679_.jpg",
-    pros: ["Premium German engineering", "4-stage sharpening system", "Exceptional precision"],
-    cons: ["High cost", "Large footprint"],
-    verdict: "Ultimate choice for professional chefs demanding top precision.",
-  },
-  {
-    id: 8,
-    title: "Brod & Taylor Professional Knife Sharpener",
-    rating: 4.6,
-    price: "$134.99",
-    image: "https://m.media-amazon.com/images/I/51OZMYpKnkL._AC_SX679_.jpg",
-    pros: ["Quiet operation", "Sleek stainless design", "Consistent professional results"],
-    cons: ["Expensive replacement belts", "Requires regular maintenance"],
-    verdict: "Premium sharpener with whisper-quiet performance for daily use.",
-  },
-  {
-    id: 9,
-    title: "Cold Steel Jimi Slash Competition Chopper Sharpener",
-    rating: 4.2,
-    price: "$44.99",
-    image: "https://m.media-amazon.com/images/I/51Fv9n2OkyL._AC_SX679_.jpg",
-    pros: ["Compact and portable", "Quick sharpening", "Affordable for beginners"],
-    cons: ["Basic functionality", "Not for heavy-duty use"],
-    verdict: "Solid entry-level sharpener for casual users on a budget.",
-  },
-]
+    {
+      slug: "chefs-choice-15-trizor-xv",
+      title: "Chef's Choice 15 Trizor XV Electric Knife Sharpener",
+      rating: 4.8,
+      price: "$189.99",
+      image: "https://m.media-amazon.com/images/I/615RT4PtR8L._AC_SX679_.jpg",
+      pros: ["3-stage sharpening system", "Diamond abrasives for durability", "Precision angle guides"],
+      cons: ["Higher price point", "Takes counter space"],
+      verdict: "Best overall electric knife sharpener for professional results at home.",
+      amazonLink: "https://www.amazon.com/ChefsChoice-EdgeSelect-Professional-Sharpener-Sharpening/dp/B004UGUNFM",
+    },
+    {
+      slug: "work-sharp-culinary-e5",
+      title: "Work Sharp Professional Electric Culinary E5",
+      rating: 4.6,
+      price: "$149.95",
+      image: "https://m.media-amazon.com/images/I/71e-TNCTqhL._AC_SX679_.jpg",
+      pros: ["Compact and portable design", "Easy one-button operation", "Built-in vacuum for clean sharpening"],
+      cons: ["Limited to kitchen knives", "Plastic housing feels less premium"],
+      verdict: "Excellent for home cooks seeking convenience and quick sharpening.",
+      amazonLink: "https://www.amazon.com/Work-Sharp-Culinary-Kitchen-Sharpener/dp/B07S6XQ5K2",
+    },
+    {
+      slug: "presto-eversharp",
+      title: "Presto EverSharp Electric Knife Sharpener",
+      rating: 4.4,
+      price: "$76.99",
+      image: "https://m.media-amazon.com/images/I/61MlhKau8zL._AC_SX679_.jpg",
+      pros: ["Affordable and simple to use", "Compact for easy storage", "Sharpens both straight and serrated blades"],
+      cons: ["Basic functionality", "Less precise for professional use"],
+      verdict: "Best budget option for occasional knife maintenance.",
+      amazonLink: "https://www.amazon.com/Presto-08810-Professional-Electric-Sharpener/dp/B000TYBWJ0",
+    },
+    {
+      slug: "sharp-professional-precision-adjust",
+      title: "Work Sharp Professional Precision Adjust Knife Sharpener",
+      rating: 4.7,
+      price: "$249.95",
+      image: "https://m.media-amazon.com/images/I/81FGKdKYlsL._AC_SX679_.jpg",
+      pros: ["Adjustable angle guides", "Versatile for all blade types", "Professional precision"],
+      cons: ["Learning curve for adjustments", "Manual angle setting"],
+      verdict: "Ideal for knife enthusiasts wanting customizable sharpening angles.",
+      amazonLink: "https://www.amazon.com/Sharp-Professional-Precision-Adjust-Sharpener/dp/B0BTTXVQRQ",
+    },
+    {
+      slug: "chefs-choice-diamond-hone",
+      title: "Chef's Choice Diamond Hone Electric Sharpener",
+      rating: 4.5,
+      price: "$89.99",
+      image: "https://m.media-amazon.com/images/I/51ApXLfEiqS._AC_SX679_.jpg",
+      pros: ["Diamond abrasives for fast sharpening", "Long-lasting edge", "Compact design"],
+      cons: ["Noisy during operation", "Bulky for small kitchens"],
+      verdict: "Great for heavy-duty sharpening with superior diamond technology.",
+      amazonLink: "https://www.amazon.com/ChefsChoice-Sharpener-Sharpening-20-degree-Abrasives/dp/B007MHEYW4",
+    },
+    {
+      slug: "dalstrong-chef-cleaver",
+      title: "DALSTRONG Chef Cleaver with Sharpener",
+      rating: 4.3,
+      price: "$54.99",
+      image: "https://m.media-amazon.com/images/I/615CTKMJjvL._AC_SY879_.jpg",
+      pros: ["Integrated sharpener", "Ergonomic handle", "High-carbon steel blade"],
+      cons: ["Limited to cleaver style", "Requires manual sharpening"],
+      verdict: "Convenient all-in-one cleaver with built-in maintenance tool.",
+      amazonLink: "https://www.amazon.com/DALSTRONG-Chef-Cleaver-Hybrid-Knife/dp/B08F2XWHNK",
+    },
+    {
+      slug: "wusthof-petec",
+      title: "Wusthof PEtec Electric Knife Sharpener",
+      rating: 4.9,
+      price: "$199.99",
+      image: "https://m.media-amazon.com/images/I/61b0ng0Gg5L._AC_SX679_.jpg",
+      pros: ["Premium German engineering", "4-stage system", "Exceptional precision"],
+      cons: ["Premium price", "Large footprint"],
+      verdict: "The ultimate choice for professional chefs and serious culinary enthusiasts.",
+      amazonLink: "https://www.amazon.com/W%C3%BCsthof-Classic-Hollow-2-Piece-3-5-inch/dp/B0B6QBT4FH",
+    },
+    {
+      slug: "brod-taylor-sourdough-home",
+      title: "Brod & Taylor Sourdough Home",
+      rating: 4.6,
+      price: "$128.00",
+      image: "https://m.media-amazon.com/images/I/51OZMYpKnkL._AC_SX679_.jpg",
+      pros: ["Precise temperature control", "Compact design", "Consistent starter performance"],
+      cons: ["Expensive for a niche product", "Limited to sourdough use"],
+      verdict: "Perfect for sourdough enthusiasts seeking consistent starter maintenance.",
+      amazonLink: "https://www.amazon.com/Brod-Taylor-SH-100-Sourdough-Home/dp/B0C9SJ9FRW",
+    },
+    {
+      slug: "cold-steel-jimi-slash",
+      title: "Cold Steel Jimi Slash Competition Chopper",
+      rating: 4.2,
+      price: "$399.99",
+      image: "https://m.media-amazon.com/images/I/51Fv9n2OkyL._AC_SX679_.jpg",
+      pros: ["CPM-3V steel blade", "Premium leather sheath", "Ergonomic Kray-Ex handle"],
+      cons: ["High price", "Specialized for chopping"],
+      verdict: "Specialized high-end chopper for competitive enthusiasts.",
+      amazonLink: "https://www.amazon.com/Cold-Steel-Slash-Chopper-Cleaver/dp/B0CBW2DZ5K",
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -132,7 +141,7 @@ export default function ReviewsPage() {
                   </Badge>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-4 flex-1">
                   <div>
                     <h4 className="font-semibold text-sm text-green-400 mb-2">Pros:</h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
@@ -154,9 +163,11 @@ export default function ReviewsPage() {
                   <div className="pt-4 border-t border-border">
                     <p className="text-sm font-medium">{review.verdict}</p>
                   </div>
+                </div>
 
+                <div className="mt-4">
                   <Link href={`/reviews/${review.slug}`} className="block">
-                    <Button className="w-full mt-4 bg-primary hover:bg-primary/90">Read More</Button>
+                    <Button className="w-full bg-primary hover:bg-primary/90">Read Full Review</Button>
                   </Link>
                 </div>
               </Card>

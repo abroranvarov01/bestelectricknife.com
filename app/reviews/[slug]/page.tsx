@@ -9,6 +9,7 @@ import { notFound } from "next/navigation"
 
 const reviews = [
   {
+    slug: "chefs-choice-15-trizor-xv",
     id: 1,
     title: "Chef's Choice 15 Trizor XV",
     rating: 4.8,
@@ -28,6 +29,7 @@ const reviews = [
     },
   },
   {
+    slug: "work-sharp-culinary-e5",
     id: 2,
     title: "Work Sharp Culinary E5",
     rating: 4.6,
@@ -47,6 +49,7 @@ const reviews = [
     },
   },
   {
+    slug: "presto-eversharp",
     id: 3,
     title: "Presto EverSharp",
     rating: 4.4,
@@ -66,6 +69,7 @@ const reviews = [
     },
   },
   {
+    slug: "smiths-50264-adjustable",
     id: 4,
     title: "Smith's 50264 Adjustable",
     rating: 4.7,
@@ -85,6 +89,7 @@ const reviews = [
     },
   },
   {
+    slug: "edgecraft-diamond-hone",
     id: 5,
     title: "EdgeCraft Diamond Hone",
     rating: 4.5,
@@ -104,6 +109,7 @@ const reviews = [
     },
   },
   {
+    slug: "kitcheniq-edge-grip-pro",
     id: 6,
     title: "KitchenIQ Edge Grip Pro",
     rating: 4.3,
@@ -123,6 +129,7 @@ const reviews = [
     },
   },
   {
+    slug: "wusthof-petec",
     id: 7,
     title: "Wusthof PEtec",
     rating: 4.9,
@@ -142,6 +149,7 @@ const reviews = [
     },
   },
   {
+    slug: "brod-taylor-professional",
     id: 8,
     title: "Brod & Taylor Professional",
     rating: 4.6,
@@ -161,6 +169,7 @@ const reviews = [
     },
   },
   {
+    slug: "darex-work-sharp-e2",
     id: 9,
     title: "Darex Work Sharp E2",
     rating: 4.2,
@@ -181,8 +190,8 @@ const reviews = [
   },
 ]
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const review = reviews.find((r) => r.id === Number.parseInt(params.id))
+export default function ProductPage({ params }: { params: { slug: string } }) {
+  const review = reviews.find((r) => r.slug === params.slug)
 
   if (!review) {
     notFound()
@@ -216,8 +225,6 @@ export default function ProductPage({ params }: { params: { id: string } }) {
                   {review.rating}
                 </Badge>
               </div>
-
-              
 
               <div className="space-y-6">
                 <div>

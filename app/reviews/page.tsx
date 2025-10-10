@@ -9,6 +9,7 @@ import Link from "next/link"
 export default function ReviewsPage() {
   const reviews = [
     {
+      slug: "chefs-choice-15-trizor-xv",
       id: 1,
       title: "Chef's Choice 15 Trizor XV",
       rating: 4.8,
@@ -19,6 +20,7 @@ export default function ReviewsPage() {
       verdict: "Best overall electric knife sharpener for serious home cooks and professionals.",
     },
     {
+      slug: "work-sharp-culinary-e5",
       id: 2,
       title: "Work Sharp Culinary E5",
       rating: 4.6,
@@ -29,6 +31,7 @@ export default function ReviewsPage() {
       verdict: "Excellent choice for home cooks looking for convenience and quality.",
     },
     {
+      slug: "presto-eversharp",
       id: 3,
       title: "Presto EverSharp",
       rating: 4.4,
@@ -39,6 +42,7 @@ export default function ReviewsPage() {
       verdict: "Best budget option for occasional sharpening needs.",
     },
     {
+      slug: "smiths-50264-adjustable",
       id: 4,
       title: "Smith's 50264 Adjustable",
       rating: 4.7,
@@ -49,6 +53,7 @@ export default function ReviewsPage() {
       verdict: "Perfect for knife enthusiasts who want complete control over sharpening angles.",
     },
     {
+      slug: "edgecraft-diamond-hone",
       id: 5,
       title: "EdgeCraft Diamond Hone",
       rating: 4.5,
@@ -59,6 +64,7 @@ export default function ReviewsPage() {
       verdict: "Ideal for heavy-duty use with superior diamond sharpening technology.",
     },
     {
+      slug: "kitcheniq-edge-grip-pro",
       id: 6,
       title: "KitchenIQ Edge Grip Pro",
       rating: 4.3,
@@ -69,6 +75,7 @@ export default function ReviewsPage() {
       verdict: "Great mid-range option for everyday kitchen knife maintenance.",
     },
     {
+      slug: "wusthof-petec",
       id: 7,
       title: "Wusthof PEtec",
       rating: 4.9,
@@ -79,6 +86,7 @@ export default function ReviewsPage() {
       verdict: "The ultimate choice for professional chefs and serious culinary enthusiasts.",
     },
     {
+      slug: "brod-taylor-professional",
       id: 8,
       title: "Brod & Taylor Professional",
       rating: 4.6,
@@ -89,6 +97,7 @@ export default function ReviewsPage() {
       verdict: "Premium sharpener with whisper-quiet operation and professional-grade results.",
     },
     {
+      slug: "darex-work-sharp-e2",
       id: 9,
       title: "Darex Work Sharp E2",
       rating: 4.2,
@@ -115,7 +124,7 @@ export default function ReviewsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {reviews.map((review) => (
-              <Card key={review.id} className="p-6 glass-effect hover-lift flex flex-col">
+              <Card key={review.slug} className="p-6 glass-effect hover-lift flex flex-col">
                 <img
                   src={review.image || "/placeholder.svg"}
                   alt={review.title}
@@ -155,7 +164,7 @@ export default function ReviewsPage() {
                     <p className="text-sm font-medium">{review.verdict}</p>
                   </div>
 
-                  <Link href={`/reviews/${review.id}`} className="block">
+                  <Link href={`/reviews/${review.slug}`} className="block">
                     <Button className="w-full mt-4 bg-primary hover:bg-primary/90">Read More</Button>
                   </Link>
                 </div>

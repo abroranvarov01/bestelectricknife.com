@@ -1,8 +1,12 @@
 import { Zap } from "lucide-react"
+import Link from "next/link"
 
 export function Footer() {
   const links = {
-    Legal: ["Privacy Policy", "Terms of Service"],
+    Legal: [
+      { label: "Privacy Policy", href: "/privacy-policy" },
+      { label: "Terms of Service", href: "/terms-of-service" },
+    ],
   }
 
   return (
@@ -24,10 +28,13 @@ export function Footer() {
               <h3 className="font-display font-semibold mb-4">{category}</h3>
               <ul className="space-y-2">
                 {items.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                      {item}
-                    </a>
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
                   </li>
                 ))}
               </ul>

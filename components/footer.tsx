@@ -2,15 +2,13 @@ import { Zap } from "lucide-react"
 
 export function Footer() {
   const links = {
-    Product: ["Categories", "Top Picks", "Reviews", "Comparison"],
-    Company: ["About Us", "Contact", "Blog", "Careers"],
-    Legal: ["Privacy Policy", "Terms of Service", "Cookie Policy", "Disclaimer"],
+    Legal: ["Privacy Policy", "Terms of Service"],
   }
 
   return (
     <footer className="border-t border-border bg-card/30">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-2 mb-4">
               <Zap className="w-6 h-6 text-primary" />

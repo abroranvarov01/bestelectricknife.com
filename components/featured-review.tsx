@@ -1,5 +1,6 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Play } from "lucide-react"
 import Link from "next/link"
 
 export function FeaturedReview() {
@@ -28,15 +29,10 @@ export function FeaturedReview() {
 
           <div className="relative aspect-video rounded-lg overflow-hidden blade-shine">
             <img
-              src="/chef-using-electric-knife-sharpener.jpg"
-              alt="Featured Review"
+              src="/professional-electric-knife-sharpener-on-kitchen-c.jpg"
+              alt="Chef'sChoice 15 Trizor XV Electric Knife Sharpener"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-              <button className="w-20 h-20 rounded-full bg-primary/90 hover:bg-primary flex items-center justify-center transition-all hover:scale-110">
-                <Play className="w-8 h-8 text-white ml-1" />
-              </button>
-            </div>
           </div>
         </div>
       </div>

@@ -6,22 +6,22 @@ import "./globals.css"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "Best Electric Knife Sharpeners 2025 | Expert Reviews & Guides",
-  description:
-    "Discover the best electric knife sharpeners of 2025. Expert reviews, comparisons, and buying guides for home and professional use.",
-  generator: "v0.app",
+	title: "Best Electric Knife Sharpeners 2025 | Expert Reviews & Guides",
+	description:
+		"Discover the best electric knife sharpeners of 2025. Expert reviews, comparisons, and buying guides for home and professional use.",
+	referrer: 'unsafe-url'
 }
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode
+	children: React.ReactNode
 }>) {
-  return (
-    <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
-      </body>
-    </html>
-  )
+	return (
+		<html lang="en">
+			<body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+				<Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+			</body>
+		</html>
+	)
 }
